@@ -12,15 +12,13 @@ def redireccion(request):
 	actual = queryset.rol
 
 	if actual == "DOCENTE":
-		return HttpResponseRedirect(reverse('home_t')) #Main Docente /Cambiar los home	
+		return HttpResponseRedirect(reverse('home_d')) 
 
 	if actual == "ALUMNO":
-		return HttpResponseRedirect(reverse('home_e')) #Main Alumno
+		return HttpResponseRedirect(reverse('home_l'))
 	
-	if actual != "TUTOR" or  actual != "PERSONAL" or actual != "ADMINISTRADOR":
-		return redirect(Registro_View)
-
-
+	if actual != "ALUMNO" or  actual != "DOCENTE":
+		return HttpResponseRedirect(reverse('home_l')) #CAMBIAR A ERROR
 
 
 	return render(request,"salto.html")

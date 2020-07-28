@@ -20,13 +20,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from redireccion import urls as red
 from docente import urls as docente_urls
+from alumno import urls as alumno_urls
 
 
 urlpatterns = [
     
     path('admin/', admin.site.urls),
     path(r'',include('Home.urls')),
-    path(r'docente/',include(docente_urls)), #se queda
+    path(r'docente/',include(docente_urls)),
+    path(r'alumno/',include(alumno_urls)),
+    path(r'red/',include(red)),
 
 
 ]

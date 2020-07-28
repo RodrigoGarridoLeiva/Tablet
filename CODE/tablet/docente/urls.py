@@ -4,6 +4,6 @@ from docente import views
 
 urlpatterns =[
 
-#url(r'lista/pacientes/',views.usuarios_listpa,name="listpaciente")
+url(r'home/	',views.home_d,name="home_d")
 
 ]

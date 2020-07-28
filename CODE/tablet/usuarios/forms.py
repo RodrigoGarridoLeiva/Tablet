@@ -34,8 +34,7 @@ class Registro_Form(UserCreationForm):
 class Perfil_Form(forms.ModelForm):
 	class Meta:
 		ROL=(
-			('PERSONAL','Docente'),
-			('TUTOR','Tutor'),
+			('DOCENTE','Docente'),
 			('ALUMNO','Alumno'))
 
 		model = Perfil

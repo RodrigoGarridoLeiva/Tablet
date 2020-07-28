@@ -86,9 +86,7 @@ def perfil_edit(request,usuario_id): #Se queda
         if usuario.rol=='ALUMNO':
         	return redirect(Alumno_view,usuario.id)
         if usuario.rol=='PERSONAL':
-        	return redirect(Docente_view,usuario.id)
-        if usuario.rol=='ADMINISTRADOR':
-            return redirect(PerfilView,usuario.id)       
+        	return redirect(Docente_view,usuario.id)     
     return render(request,'perfil_form.html',{'form':form})	
 
 
@@ -126,7 +124,7 @@ def Alumno_view(request,perfil): #Se queda
 			form1.save()
 
 			
-		return HttpResponseRedirect(reverse('home_e')) #Redirect to login
+		return HttpResponseRedirect(reverse('home_l')) #Redirect to login
 	else:
 		form1 = Alumno_Form()
 		
@@ -162,7 +160,7 @@ def Docente_view(request,perfil):
 		if form.is_valid():
 			form.save()
 	
-		return HttpResponseRedirect(reverse('home_e')) #Redirect to login
+		return HttpResponseRedirect(reverse('home_d')) #Redirect to login
 	else:
 		form = Docente_Form()
 		

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Home',
     'redireccion',
     'docente',
+    'alumno',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ USE_TZ = True
 
 
 
-LOGIN_REDIRECT_URL='redireccion'
+LOGIN_REDIRECT_URL='redirect'
 
 LOGOUT_REDIRECT_URL='main'
 

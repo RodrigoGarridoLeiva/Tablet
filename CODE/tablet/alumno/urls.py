@@ -1,10 +1,9 @@
 from django.conf.urls import url,re_path
 from django.urls import path, include
-from redireccion import views
+from alumno import views
 
 urlpatterns =[
 
-url(r'redirect/',views.redireccion,name="redirect"),
+url(r'home/',views.home_l,name="home_l")
 
 ]
-
