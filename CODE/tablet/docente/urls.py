@@ -4,6 +4,7 @@ from docente import views
 
 urlpatterns =[
 
-url(r'home/	',views.home_d,name="home_d")
+url(r'home/	',views.home_d,name="home_d"),
+url(r'logout/',views.logout_view,name="logout")
 
 ]

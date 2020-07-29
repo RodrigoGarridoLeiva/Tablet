@@ -85,7 +85,7 @@ def perfil_edit(request,usuario_id): #Se queda
             Set_password(usuario_id)
         if usuario.rol=='ALUMNO':
         	return redirect(Alumno_view,usuario.id)
-        if usuario.rol=='PERSONAL':
+        if usuario.rol=='DOCENTE':
         	return redirect(Docente_view,usuario.id)     
     return render(request,'perfil_form.html',{'form':form})	
 
