@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %}-->
 
 
 
@@ -73,29 +73,11 @@
 
 <div class="container" style="margin-left: -80px; margin-top: 20px; width: 100%;">
 	
-	<h1>Biblioteca</h1><br>
+	<h1>Archivos Main</h1><br>
 
 	<hr style="background-color:lightblue; width: 300px; margin-left: -10px;margin-top:-20px; height: 3px;">
 	<a href="{% url 'form_archivos'%}" class="btn btn-info" id="subir_archivo"> + Subir Archivo </a>
 		
-
-	<div class=" row ">
-		
-		{% for arch in archivo %}
-	
-		<div class="dropdown2">
-		  <a class="dropbtn2"><img src="/static/pdf.png"style="width: 100px;"></a>
-		  <div class="dropdown-content2">
-			<a href="../..{{arch.file.url}}" download="{{arch.nombre}}" > descargar</a>
-			<a href="{% url 'form_archivos_delete' id=arch.id %}">Eliminar</a>
-			
-		  </div>
-		  <p style="text-align: center;">{{arch.nombre}}</p>
-		</div>
-		
-		
-		{% endfor %}
-		</div>
 
 
 
