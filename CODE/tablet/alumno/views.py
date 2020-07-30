@@ -4,8 +4,18 @@ from django.contrib.auth import logout
 
 @login_required
 def home_l(request):
+
+	current_user = request.user
+	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
+
+
+	context = {
+
+		"nom": current_user.first_name,
+		"ape":current_user.last_name,
+	}
 	
-	return render(request,"home_l.html")
+	return render(request,"home_l.html", context)
 
 	
 @login_required
