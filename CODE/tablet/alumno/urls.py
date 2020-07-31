@@ -4,6 +4,7 @@ from alumno import views
 
 urlpatterns =[
 
-url(r'home/',views.home_l,name="home_l")
+url(r'home/',views.home_l,name="home_l"),
+url(r'editar/docente/',views.editarperfil_alumno,name="editar_alumno")
 
 ]

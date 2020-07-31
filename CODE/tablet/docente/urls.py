@@ -5,6 +5,7 @@ from docente import views
 urlpatterns =[
 
 url(r'home/	',views.home_d,name="home_d"),
+url(r'editar/docente/',views.editarperfil_docente,name="editar_docente"),
 url(r'logout/',views.logout_view,name="logout")
 
 ]

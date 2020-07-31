@@ -80,7 +80,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
-    <a class="navbar-brand" href="#" style="color: white;margin-right:20px;"><img src="{% static 'logo_p.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;" >   Portal de Alumnos </a>
+    <a class="navbar-brand" href='{% url "home_l" %}' style="color: white;margin-right:20px;"><img src="{% static 'logo_p.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;" >   Portal de Alumnos </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,7 +88,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
            <ul class="navbar-nav ml-auto">
                <li class="nav-item">
-    				<a href="#"> <img src="{% static 'al.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;"> </a>              
+    				<a href='{% url "editar_alumno" %}'> <img src="{% static 'al.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;"> </a>              
                </li>
            </ul>
        </div>
