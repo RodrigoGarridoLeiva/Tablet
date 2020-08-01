@@ -38,3 +38,18 @@ def editarperfil_docente(request):
 	}
 	
 	return render(request,"editar_docente.html",context)
+
+
+@login_required
+def lista_cursos_docente(request):
+	current_user = request.user
+	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
+
+
+	context = {
+
+		"nom": current_user.first_name,
+		"ape":current_user.last_name,
+	}
+	
+	return render(request,"lista_cursos_docente.html",context)

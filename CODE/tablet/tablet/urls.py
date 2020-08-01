@@ -22,6 +22,7 @@ from redireccion import urls as red
 from docente import urls as docente_urls
 from alumno import urls as alumno_urls
 from archivos import urls as archivos_urls
+from cursos import urls as cursos_urls
 
 
 urlpatterns = [
@@ -32,6 +33,7 @@ urlpatterns = [
     path(r'alumno/',include(alumno_urls)),
     path(r'red/',include(red)),
     path(r'arch/',include(archivos_urls)),
+    path(r'cursos/',include(cursos_urls)),
 
 
 ]
