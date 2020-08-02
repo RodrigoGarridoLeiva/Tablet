@@ -17,3 +17,8 @@ class Materia(models.Model):
 	id_curso = models.IntegerField()
 	nombre = models.CharField(null=False,max_length=20)
 
+
+class ListaAlumno(models.Model):
+	id_curso = models.IntegerField()
+	id_alumno = models.IntegerField()
+

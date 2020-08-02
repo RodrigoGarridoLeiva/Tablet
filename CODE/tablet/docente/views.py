@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from cursos.models import Cursos
 #from usuarios.models import Docente
 
 
@@ -43,13 +44,15 @@ def editarperfil_docente(request):
 @login_required
 def lista_cursos_docente(request):
 	current_user = request.user
+	c = Cursos.objects.all()
 	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
 
 
 	context = {
 
-		"nom": current_user.first_name,
-		"ape":current_user.last_name,
+		"id": current_user.id,
+		"object_list": c,
+
 	}
 	
 	return render(request,"lista_cursos_docente.html",context)

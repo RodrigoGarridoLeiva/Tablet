@@ -114,7 +114,7 @@ a {
 <hr>
 
 <div class="container"  style="margin-left: 50px;">
-    <h1  style="margin-left: 10px;">Lista de Cursos   <a href='#'> <button class="btn btn-secondary "> Agregar Curso </button></a></h1>
+    <h1  style="margin-left: 10px;">Lista de Cursos   <a href='{% url "inicio_cursos" %}'> <button class="btn btn-secondary "> Agregar Curso </button></a></h1>
 
     
 
@@ -151,17 +151,23 @@ a {
                             <tbody>
                                 {% for obj in object_list %}
                                 
+                                {% if id == obj.id_docente %}
 
                                 <tr>
                                     <td>
-                                        hola {{obj.rut}}
+                                        {{obj.id}}
                                     </td>
                                     <td>                                      
-                                        hola
+                                        {{obj.nombre}}
                                     </td>
-                                    <td> <a href='{% url "archivos_home" %}'> <button class="btn btn-secondary "> Subir Documento </button></a> </br> </td> 
+                                    <td> <a href='{% url "archivos_home" %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
+
+                                        <a href='#'> <button class="btn btn-secondary "> Detalles </button></a> </br>
+
+                                     </td> 
                                         
                                 </tr>
+                                {%endif%}
                                 {%endfor%}
                                 </tbody>
                                 </table>

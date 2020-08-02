@@ -47,15 +47,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <div class="card-header text-center">
     <h1> Bienvenido {{nom}} {{ape}} </h1>
-  </div>
+
 <div class="card-body">
     
     
     <a href='#'> <button class="btn btn-success btn-lg btn-block"> Cargar Cursos </button></a> </br>
     <a href='{% url "logout" %}'> <button class="btn btn-success btn-lg btn-block"> Salir </button></a> </br>
 
-</br></br>
+
 </div>
+
+  </div>
+
 
 
 <style>
@@ -159,24 +162,8 @@ a {
 
 <hr>
 
-<div class="container"  style="margin-left: -50px;">
-    <h1  style="margin-left: 10px;">Lista de Cursos</h1> <br>
-    <div class="row" >
-        <div class="col-md-12 search">
-            <form method="get">
-                <div id="custom-search-input" >
-                    <input id="rut" type="text" style="width: 300px; margin-left:15px;" class="form-control" required oninput="checkRut(this)" minlength="1" maxlength="10" placeholder="Ingrese Rut..." name="buscar">
-                    <span class="input-group-list">
-                        <button id="lupa" type="submit" style="border:none;"class="button btn btn-info"><i class="fas fa-search"></i></button></br> 
-                        <a href='#'id="refresh" style="border: none;"><i class="fas fa-sync"></i></a>    
-                        
-                    </span>
-                    
-                </div>
-            </form>
-        
-    </div>
-</div>
+<div class="container"  style="margin-left: 50px;">
+</br>
     <div class="row" style="margin-top:-50px;">
         <div class="col-lg-12">
             <div class="main-box no-header clearfix">
@@ -185,51 +172,41 @@ a {
                         <table class="table user-list">
                             <thead>
                                 <tr>    
-                                <th><span>Foto</span></th>
-                                <th><span>Nombre Completo</span></th>
-                                <th><span>Rut</span></th>
-                                <th class="text-center"><span>Especialidad</span></th>
-                                <th><span>Email</span></th>
-                                <th><span>Opciones:</span></th>
+                                <th><span>ID</span></th>
+                                <th><span>Nombre Curso</span></th>
+                                <th><span>Docente</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                              {% for obj in object_list %}
-                              
+                              {% for obj_list in lista %}
+
+                              {% if obj_list.id_alumno == id_alumno%}
+                            
+                              {% for obj_curso in curso %}                              
+                              {% if obj_curso.id == obj_list.id_curso %}
 
                                 <tr>
                                     <td>
-                                        hola
+                                      {{obj_curso.id}}  
                                     </td>
                                     <td>                                      
-                                        <span style="font-size: 20px;" class="user-subhead">{{ obj.id_perfil.usuario.first_name}} {{ obj.id_perfil.usuario.last_name}}</span>
-                                    </td>
-                                    <td>{{obj.rut}}</td> 
-                                    <td class="text-center">
-                                      {%if obj.especialidad == "ENFERMERO"%}
-                                        <span  class="badge badge-info">Enfermero</span>
-                                        {%endif%}
-                                      {%if obj.especialidad == "KINESIOLOGO" %}
-                                        <span class="badge badge-success">Kinesiologo</span>
-                                        {%endif%}
-                                      {%if obj.especialidad == "TECNICO" %}
-                                        <span class="badge badge-warning">Técnico</span>
-                                        {%endif%} 
-                                        {%if obj.especialidad == "MEDICO" %}
-                                        <span  class="badge badge-danger">Médico</span>
-                                        {%endif%}   
-
+                                        {{obj_curso.nombre}}  
                                     </td>
                                     <td>
-                                        <a >{{obj.id_perfil.usuario.email}}</a>
-                                    </td>
-                                    <td style="width: 20%;">
-                      
-                        <a href='#' class="btn btn-info"> Detalle </a>                                                               
-                                    </td>
 
-                                      
+                                    
+
+                                    #COLOCAR NOMBRE SEGUN ID USER
+
+                                        {{obj_curso.id_docente}}  
+
+                                    
+                                    </td>
+                                                                          
                                 </tr>
+                                {%endif%}
+                                {%endfor%}
+                                {%endif%}
                                 {%endfor%}
                                 </tbody>
                                 </table>
