@@ -51,7 +51,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <div class="card-body">
     
     
-    <a href='#'> <button class="btn btn-success btn-lg btn-block"> Cargar Cursos </button></a> </br>
+    <a href='{% url "ingresar_curso" %}'> <button class="btn btn-success btn-lg btn-block"> Cargar Cursos </button></a> </br>
     <a href='{% url "logout" %}'> <button class="btn btn-success btn-lg btn-block"> Salir </button></a> </br>
 
 
@@ -175,6 +175,7 @@ a {
                                 <th><span>ID</span></th>
                                 <th><span>Nombre Curso</span></th>
                                 <th><span>Docente</span></th>
+                                <th><span>Opciones:</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -194,15 +195,25 @@ a {
                                     </td>
                                     <td>
 
-                                    
+                                    {% for usr in users %}                              
 
-                                    #COLOCAR NOMBRE SEGUN ID USER
+                                    {% if usr.id == obj_curso.id_docente %}
 
-                                        {{obj_curso.id_docente}}  
+                                        {{usr.first_name}}  {{usr.last_name}}  
+
+                                    {% endif %}
+
+                                    {% endfor %}
 
                                     
                                     </td>
-                                                                          
+                                    
+                                    <td>
+                                    
+                                    <a href='#'> <button class="btn btn-success"> Entrar </button></a> </br>
+
+                                    </td>
+
                                 </tr>
                                 {%endif%}
                                 {%endfor%}

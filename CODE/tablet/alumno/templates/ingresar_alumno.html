@@ -1,4 +1,4 @@
-{%extends "base_docente.html"%}
+{%extends "base_alumno.html"%}
 
 {%  block content %}
 
@@ -44,7 +44,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
   <div class="card-header text-center">
-    <h1> Agregar Curso </h1>
+    <h1> Cargar Curso </h1>
   </div>
 <div class="card-body">
     
@@ -55,22 +55,22 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               {% csrf_token%} 
 
 
-                <h1> Ingrese Nombre para el curso...</h1>
+                <h1> Ingrese id del curso...</h1>
 
-              Nombre</br>
+              ID</br>
                 <div>
-                  <label for=nombre></label>
-                  <input name="nombre" id="nombre" width="20" placeholder="Inserte Nombre...">
+                  <label for=id_curso></label>
+                  <input name="id_curso" id="id_alumno" width="20" placeholder="Inserte identificador...">
                 </div> 
 
                 <div>
-                  <label for=id_docente></label>
-                  <input name="id_docente" type="hidden" id="id_docente" value={{id_d}}>
+                  <label for=id_alumno></label>
+                  <input name="id_alumno" type="hidden" id="id_alumno" value={{id_al}}>
                 </div> 
 
              </br>
 
-              <button class="btn btn-secondary" type="submit">Enviar</button>
+              <button class="btn btn-success" type="submit">Enviar</button>
               </form>
 
 

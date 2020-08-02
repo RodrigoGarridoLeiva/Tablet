@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from cursos.models import Cursos, Materia, ListaAlumno
 from usuarios.models import Docente
+from django.contrib.auth.models import User
+
+from cursos.forms import Lista_Form
 
 @login_required
 def home_l(request):
@@ -11,6 +14,7 @@ def home_l(request):
 	c = Cursos.objects.all()
 	l = ListaAlumno.objects.all()
 	docente = Docente.objects.all()
+	usuarios = User.objects.all()
 
 	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
 
@@ -23,10 +27,32 @@ def home_l(request):
 		"lista":l,
 		"curso": c,
 		"docente":docente,
-
+		"users":usuarios,
 	}
 	
 	return render(request,"home_l.html", context)
+
+
+@login_required
+def ingresar_curso(request):
+	current_user = request.user
+	form = Lista_Form(request.POST or None)
+
+	if form.is_valid():
+		instance=form.save(commit=False)
+		instance.save()
+		return HttpResponseRedirect(reverse('home_l'))
+
+	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
+
+
+	context = {
+
+		"id_al": current_user.id,
+	}
+	
+	return render(request,"ingresar_alumno.html",context)
+
 
 	
 @login_required
