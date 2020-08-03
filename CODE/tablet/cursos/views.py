@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import Cursos_Form, Materia_Form
+from .models import Materia
 
 @login_required
 def inicio_cursos(request):
@@ -28,6 +29,7 @@ def inicio_cursos(request):
 def materias(request,curso_id):
 	current_user = request.user
 	form = Materia_Form(request.POST or None)
+	materia = Materia.objects.all()
 
 	if form.is_valid():
 		instance=form.save(commit=False)
@@ -38,6 +40,24 @@ def materias(request,curso_id):
 
 		"id_d": current_user.id,
 		"curso_id": curso_id,
+		"materia":materia,
+		"id":curso_id,
+		
 	}
 	
 	return render(request,"inicio_materias.html",context)
+
+@login_required
+def ver_materias(request,curso_id):
+	current_user = request.user
+	materia = Materia.objects.all()
+
+	context = {
+
+		"id_d": current_user.id,
+		"curso_id": curso_id,
+		"materia":materia,
+		
+	}
+	
+	return render(request,"hola.html",context)
