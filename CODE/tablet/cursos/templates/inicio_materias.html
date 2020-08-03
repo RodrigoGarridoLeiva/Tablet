@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<title> {%block head_title %} Portal de  Docentes | Menú {%endblock head_title%} </title>
+<title> {%block head_title %} Portal de  Docentes | Cursos {%endblock head_title%} </title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,15 +44,37 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
   <div class="card-header text-center">
-    <h1> Bienvenido {{nom}} {{ape}} </h1>
+    <h1> Agregar Materia </h1>
   </div>
 <div class="card-body">
     
-    
-    <a href='{% url "lista_cursos_docente" %}'> <button class="btn btn-secondary btn-lg btn-block"> Cargar Archivos </button></a> </br>
-    
-    <a href="#"> <button class="btn btn-secondary btn-lg btn-block"> Evaluar </button></a> </br></br>
-    <a href='{% url "logout" %}'> <button class="btn btn-secondary btn-lg btn-block"> Salir </button></a> </br>
+
+<!--FORM-->
+
+<form method="POST">
+              {% csrf_token%} 
+
+
+                <h1> Ingrese Nombre para la materia...</h1>
+
+              Nombre</br>
+                <div>
+                  <label for=nombre></label>
+                  <input name="nombre" id="nombre" width="20" placeholder="Inserte Nombre...">
+                </div> 
+
+                <div>
+                  <label for=id_curso></label>
+                  <input name="id_curso" type="hidden" id="id_curso" value={{curso_id}}>
+                </div> 
+
+             </br>
+
+              <button class="btn btn-secondary" type="submit">Enviar</button>
+              </form>
+
+
+
 
 </div>
 

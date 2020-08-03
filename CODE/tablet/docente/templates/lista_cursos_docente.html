@@ -160,9 +160,11 @@ a {
                                     <td>                                      
                                         {{obj.nombre}}
                                     </td>
-                                    <td> <a href='{% url "archivos_home" %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
+                                    <td> <a href='{% url "inicio_materias" curso_id=obj.id %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
 
-                                        <a href='#'> <button class="btn btn-secondary "> Detalles </button></a> </br>
+                                        <a href='#'> <button class="btn btn-secondary "> Detalles (ver alumnos) </button></a>
+
+                                        
 
                                      </td> 
                                         

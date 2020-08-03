@@ -4,7 +4,8 @@ from cursos import views
 
 urlpatterns =[
 
-url(r'inicio/',views.inicio_cursos,name="inicio_cursos")
+url(r'inicio/',views.inicio_cursos,name="inicio_cursos"),
+url(r'materias/(?P<curso_id>\d+)$',views.materias,name="inicio_materias")
 
 
 ]
