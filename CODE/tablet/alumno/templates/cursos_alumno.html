@@ -1,0 +1,18 @@
+
+{%for obj in m%}
+
+
+
+{%if obj.id_curso == id%}
+
+{{obj.nombre}} -> <a href='{% url "ver_docs" id=obj.id %}'> <button class="btn btn-success"> Ver documentos </button></a> </br></br>
+
+
+
+
+{%endif%}
+
+
+
+{%endfor%}
+

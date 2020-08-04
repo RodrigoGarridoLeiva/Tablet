@@ -74,3 +74,20 @@ def editarperfil_alumno(request):
 	}
 	
 	return render(request,"editar_alumno.html",context)
+
+
+@login_required
+def cursos_alumno(request, id):
+	current_user = request.user
+	materia = Materia.objects.all()
+	curso = Cursos.objects.all()
+	
+	context = {
+
+		"id_al": current_user.id,
+		"m":materia,
+		"id": int(id),
+
+	}
+	
+	return render(request,"cursos_alumno.html",context)

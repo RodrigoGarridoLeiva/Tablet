@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import Cursos_Form, Materia_Form
-from .models import Materia
+from .models import Materia, Cursos
+from archivos.models import Archivo
 
 @login_required
 def inicio_cursos(request):
@@ -45,3 +46,20 @@ def materias(request,curso_id):
 	}
 	
 	return render(request,"inicio_materias.html",context)
+
+
+@login_required
+def ver_docs(request,id):
+	current_user = request.user #ALUMNO
+	materia = Materia.objects.all()
+	arch = Archivo.objects.all()
+
+	context = {
+
+		"id_a"
+		"materia_id": int(id),
+		"materia":materia,
+		
+	}
+	
+	return render(request,"ver_docs.html",context)
