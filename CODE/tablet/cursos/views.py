@@ -39,25 +39,9 @@ def materias(request,curso_id):
 	context = {
 
 		"id_d": current_user.id,
-		"curso_id": curso_id,
+		"curso_id": int(curso_id),
 		"materia":materia,
-		"id":curso_id,
 		
 	}
 	
 	return render(request,"inicio_materias.html",context)
-
-@login_required
-def ver_materias(request,curso_id):
-	current_user = request.user
-	materia = Materia.objects.all()
-
-	context = {
-
-		"id_d": current_user.id,
-		"curso_id": curso_id,
-		"materia":materia,
-		
-	}
-	
-	return render(request,"hola.html",context)

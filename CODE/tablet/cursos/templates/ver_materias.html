@@ -2,6 +2,21 @@
 
 
 
+{%  block content %}
+
+
+{%for obj in materia%}
+
+{{obj.id_curso}}
+
+{%if curso_id == obj.id_curso%}
+
+{{obj.nombre}}
+
+{%endif%}
+
+{%endfor%}
+
 
 
 {%  endblock content %}

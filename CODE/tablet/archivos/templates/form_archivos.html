@@ -1,6 +1,6 @@
-<!--{%extends "base.html"%}-->
+{%extends "base_docente.html"%}
 
-{%  block content %}
+{% block content %}
 
 <style type="text/css">
 	
@@ -31,7 +31,7 @@ label > span{
 	padding: 5px; 
 	width: 350px; 
 	margin-top: 0px; 
-	margin-left: -70px;
+	margin-left: 70px;
 	border-radius: 3px; 
 }
 
@@ -60,6 +60,13 @@ label > span{
     		<label>A<span>rchivo:</span></label>
     		{{form.file}} <br>	
     	</div>
+
+        <div>
+             <label for=curso_id></label>
+             <input name="curso_id" type="hidden" id="curso_id" value={{id}}>
+        </div>     	
+
+    	
     	<div>
     		 <button type="submit" class="btn btn-info">Subir Archivo</button>
     		<a href='#'class="btn btn-info"> volver </a>

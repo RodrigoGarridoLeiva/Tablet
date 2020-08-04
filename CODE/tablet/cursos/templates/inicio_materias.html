@@ -78,25 +78,36 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 </div>
 
+{%for obj in materia%}
 
 
 
 
 
+{%if obj.id_curso == curso_id%}
+
+{{obj.nombre}} 
+<a href='{% url "form_archivos" id_c=obj.id %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
+</br></br>
+
+{%endif%}
 
 
-
-
-
-
-
-
-
-
-
-
-
+{%endfor%}
 
 
 {%  endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

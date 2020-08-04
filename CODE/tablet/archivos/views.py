@@ -10,23 +10,28 @@ from django.core.files.storage import FileSystemStorage
 import os
 
 @login_required
-def main_arch(request):
+def main_arch(request,id_c):
 	archivo = Archivo.objects.all()    
-	return render(request,'arch_home.html',{'archivo':archivo})
+	return render(request,'arch_home.html',{'archivo':archivo}, {'id':id})
 
 
 @login_required
-def model_form_upload(request):
+def model_form_upload(request,id_c):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('archivos_home'))
+            return HttpResponseRedirect(reverse('inicio_cursos'))
     else:
         form = DocumentForm()
-    return render(request, 'form_archivos.html', {
-        'form': form
-    })
+    
+    context = {
 
+        "form": form,
+        "id": int(id_c),
+    }
+    
+
+    return render(request,'form_archivos.html',context)
 
 #FALTA SI ES WORD CONVERTIRLO EN PDF
