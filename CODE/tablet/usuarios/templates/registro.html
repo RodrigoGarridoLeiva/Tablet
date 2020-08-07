@@ -1,42 +1,88 @@
-{%extends "base_registro.html"%}
+{% extends "base_registro.html" %}
 
 {%  block content %}
 
+<body>
+  <form method="POST" class="row">
+    {% csrf_token%}
 
-<style type="text/css">
-	
-h1{
-	
-	font-size: 45px;
-	
-}
-
-span{
-	
-	font-size:30px; 
-
-}
-
-label{
-	font-size: 25px;
-	
-}
-
-label > span{
-	font-size: 20px;
-}
-
-.contenedor{
-	background: white;
-	width: 500px;
-	border-radius: 3px;
-	margin-left: auto;
-    margin-right: auto;
-}
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
 
 
+        <label class="form-label form-label-left form-label-auto" id="label_3" for="input_3">
+          Nombre de Usuario
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input jf-required">
+          
+          <input type="text" name="username" data-type="input-textbox" maxlength="150" autofocus="" required="" id="id_username" class="form-textbox validate[required]" data-component="textbox">
 
-</style>
+          {% if messages %}
+          {%for message in messages %}
+          
+            <div class="alert alert-danger">{{message}}</div>
+
+          {%endfor%}
+          {%endif%}
+
+        </div>
+      </li>
+
+      <li class="form-line jf-required" data-type="control_textbox" id="id_6">
+        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
+          Email
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_6" class="form-input jf-required">
+          <input type="text" id="input_6" name="q6_email6" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_6" required="" />
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_9">
+        <div id="cid_9" class="form-input-wide">
+          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+            <button id="input_9" type="submit" class="form-submit-button form-submit-button-simple_carolina_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              ENVIAR
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_text" id="id_11">
+        <div id="cid_11" class="form-input-wide">
+          <div id="text_11" class="form-html" data-component="text">
+            <p><span style="font-size:small;">Los campos con <strong><em>asterisco (*)</em></strong> deben ser rellenados para  poder <strong>informarle optimamente</strong>.</span></p>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+  JotForm.poweredByText = "Powered by JotForm";
+  </script>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="202196316328656" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "202196316328656-202196316328656";
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  
+</form></body>
+</html>
+<script type="text/javascript">JotForm.ownerView=true;</script>
+
+<!--
 
 <div style="text-align:center;">
 	<h1>R<span>egistro</span> </h1>
@@ -97,4 +143,6 @@ label > span{
 	</form>
 
 </div>
+
+-->
 {% endblock %} 
