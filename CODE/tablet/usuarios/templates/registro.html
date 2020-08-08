@@ -8,10 +8,13 @@
 
   <div role="main" class="form-all">
     <ul class="form-section page-section">
-      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+
+<!--USERNAME -->
+
+      <li class="form-line jf-required">
 
 
-        <label class="form-label form-label-left form-label-auto" id="label_3" for="input_3">
+        <label class="form-label form-label-left form-label-auto">
           Nombre de Usuario
           <span class="form-required">
             *
@@ -19,43 +22,108 @@
         </label>
         <div id="cid_3" class="form-input jf-required">
           
-          <input type="text" name="username" data-type="input-textbox" maxlength="150" autofocus="" required="" id="id_username" class="form-textbox validate[required]" data-component="textbox">
+          <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
 
-          {% if messages %}
-          {%for message in messages %}
-          
-            <div class="alert alert-danger">{{message}}</div>
-
-          {%endfor%}
-          {%endif%}
 
         </div>
       </li>
 
-      <li class="form-line jf-required" data-type="control_textbox" id="id_6">
-        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
-          Email
+<!--PRIMER NOMBRE -->
+
+      <li class="form-line jf-required">
+
+
+        <label class="form-label form-label-left form-label-auto">
+          Nombre
           <span class="form-required">
             *
           </span>
         </label>
-        <div id="cid_6" class="form-input jf-required">
-          <input type="text" id="input_6" name="q6_email6" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_6" required="" />
-        </div>
+        <div id="cid_3" class="form-input jf-required">
+          
+          <input type="text" name="first_name" maxlength="140" autofocus="" required="" id="id_first_name" class="form-control">
+
       </li>
+
+      
+ <!--APELLIDOS -->
+
+      <li class="form-line jf-required">
+
+
+        <label class="form-label form-label-left form-label-auto">
+          Apellidos
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input jf-required">
+          
+
+          <input type="text" name="last_name" maxlength="140" autofocus="" required="" id="id_last_name" class="form-control">
+
+      </li>
+
+    
+ <!--Correo -->
+
+
+
+      <li class="form-line jf-required" >
+
+
+        <label class="form-label form-label-left form-label-auto">
+          Correo
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input jf-required">
+          
+
+          <input type="email" name="email" maxlength="140" required="" id="id_email" class="form-control">
+
+      </li>   
+
+
+<input type="hidden" name="password2" id="password2" value="Asd123qaz">
+<input type="hidden" name="password2" id="password2" value="Asd123qaz">
+
+
+<!--ENVIAR -->
+
       <li class="form-line" data-type="control_button" id="id_9">
         <div id="cid_9" class="form-input-wide">
           <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-            <button id="input_9" type="submit" class="form-submit-button form-submit-button-simple_carolina_blue submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+            <button type="submit" class="form-submit-button form-submit-button-simple_carolina_blue submit-button jf-form-buttons jsTest-submitField" >
               ENVIAR
             </button>
           </div>
         </div>
       </li>
+
+
+<!--VOLVER -->
+
+
+      <li class="form-line" data-type="control_button" id="id_9">
+        <div id="cid_9" class="form-input-wide">
+          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+            <button class="form-submit-button form-submit-button-simple_carolina_blue submit-button jf-form-buttons jsTest-submitField" >
+              Volver al menu principal
+            </button>
+          </div>
+        </div>
+      </li>
+
+
+<!--TEXTO AUXILIAR -->
+
       <li class="form-line" data-type="control_text" id="id_11">
         <div id="cid_11" class="form-input-wide">
           <div id="text_11" class="form-html" data-component="text">
-            <p><span style="font-size:small;">Los campos con <strong><em>asterisco (*)</em></strong> deben ser rellenados para  poder <strong>informarle optimamente</strong>.</span></p>
+            <p><span style="font-size:small;">Los campos con <strong><em>asterisco (*)</em></strong> deben ser rellenados.</span></p></br>
+            <p><span style="font-size:small;">IMPORTANTE: La contraseña sera generada automaticamente con las primeras 2 letras de su nombre y las 3 primeras de su apellido.</span></p>
           </div>
         </div>
       </li>
@@ -65,22 +133,11 @@
       </li>
     </ul>
   </div>
-  <script>
-  JotForm.showJotFormPowered = "new_footer";
-  </script>
-  <script>
-  JotForm.poweredByText = "Powered by JotForm";
-  </script>
-  <input type="hidden" id="simple_spc" name="simple_spc" value="202196316328656" />
-  <script type="text/javascript">
-  document.getElementById("si" + "mple" + "_spc").value = "202196316328656-202196316328656";
-  </script>
-  <div class="formFooter-heightMask">
-  </div>
   
-</form></body>
+</form>
+</body>
 </html>
-<script type="text/javascript">JotForm.ownerView=true;</script>
+
 
 <!--
 

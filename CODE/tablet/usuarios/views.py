@@ -104,7 +104,7 @@ def Registro_View(request): #Se queda
 				usuario_id=usuarios.id
 				return redirect(perfil_edit,usuario_id)
 		else:
-			messages.error(request,"El nombre de usuario ya existe, porfavor elije otro :)")
+			messages.error(request,"El nombre de usuario ya existe, porfavor elije otro")
 
 	else:
 		form1 = Registro_Form()
