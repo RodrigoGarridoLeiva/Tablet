@@ -68,6 +68,25 @@ only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
 }	
 
+
+    body{
+
+      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url({% static 'docback1.jpg'%});
+      height: 100vh;
+      -webkit-background-size:cover;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      backdrop-filter: blur(6px);
+    }
+
+
+    .navbar{
+
+
+      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url({% static 'nav3.jpg'%});
+    }
+
 </style>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -80,16 +99,9 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <nav class="navbar navbar-expand navbar-light bg-secondary">
     <a class="navbar-brand" href='{% url "home_d" %}' style="color: white;margin-right:20px;"><img src="{% static 'logo_p.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;" >   Portal de Docentes </a>
 
-       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-           <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
-    				<a href='{% url "editar_docente" %}'> <img src="{% static 'docente.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;"> </a>              
-               </li>
-           </ul>
-       </div>
 
 
    	

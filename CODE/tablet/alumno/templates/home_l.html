@@ -1,4 +1,5 @@
 {%extends "base_alumno.html"%}
+{% load static %}
 
 {%  block content %}
 
@@ -47,15 +48,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <div class="card-header text-center">
     <h1> Bienvenido {{nom}} {{ape}} </h1>
-
-<div class="card-body">
-    
-    
-    <a href='{% url "ingresar_curso" %}'> <button class="btn btn-success btn-lg btn-block"> Cargar Cursos </button></a> </br>
-    <a href='{% url "logout" %}'> <button class="btn btn-success btn-lg btn-block"> Salir </button></a> </br>
-
-
-</div>
 
   </div>
 
@@ -152,7 +144,33 @@ a {
 
 
 
-<!-- Metodo Buscar -->
+<!-- MAIN -->
+
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a href='{% url "ingresar_curso" %}'> <img src="{% static 'cargarcurso.png'%}" alt="Norway" style="width:100%" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>Cargar Cursos</b></p>
+        <p>Explicar.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a href="#"> <img src="{% static 'perfilalu.png'%}" alt="Norway" style="width:100%" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>Perfil</b></p>
+        <p>Sección en la cual se podrán modificar los datos del perfil.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <a href='{% url "logout" %}'> <img src="{% static 'salirverde1.png'%}" alt="Norway" style="width:100%" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>Salir</b></p>
+        <p>Cerrar sesión actual.</p>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -162,6 +180,10 @@ a {
 
 <hr>
 
+<!--
+
+<div class="w3-row-padding">
+    <div class="w3-container w3-margin-bottom">
 <div class="container"  style="margin-left: 50px;">
 </br>
     <div class="row" style="margin-top:-50px;">
@@ -227,8 +249,10 @@ a {
                                 </div>
                                 </div>
                                 </div>
+                              </div>
+                            </div>
                      
-
+-->
 <script>
 
 
