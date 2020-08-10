@@ -23,6 +23,8 @@ from docente import urls as docente_urls
 from alumno import urls as alumno_urls
 from archivos import urls as archivos_urls
 from cursos import urls as cursos_urls
+from perfiles import urls as perfiles_urls
+from edit import urls as main_urls
 
 
 urlpatterns = [
@@ -34,6 +36,8 @@ urlpatterns = [
     path(r'red/',include(red)),
     path(r'arch/',include(archivos_urls)),
     path(r'cursos/',include(cursos_urls)),
+    path(r'perfil/',include(perfiles_urls)),
+    path(r'main/',include(main_urls)),
 
 
 ]
