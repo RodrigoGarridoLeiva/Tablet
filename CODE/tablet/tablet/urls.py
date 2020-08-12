@@ -37,7 +37,7 @@ urlpatterns = [
     path(r'arch/',include(archivos_urls)),
     path(r'cursos/',include(cursos_urls)),
     path(r'perfil/',include(perfiles_urls)),
-    path(r'main/',include(main_urls)),
+    path(r'editar/',include(main_urls)),
 
 
 ]
