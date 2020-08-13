@@ -6,11 +6,9 @@ from django.dispatch import receiver
 
 
 class Cursos(models.Model):
+	id_unico = models.IntegerField()
 	nombre = models.CharField(null=False,max_length=20)
 	id_docente = models.IntegerField()
-
-	def __str__(self):
-		return str(self.usuario.username)
 
 
 class Materia(models.Model):

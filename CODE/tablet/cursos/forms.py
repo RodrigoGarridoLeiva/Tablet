@@ -8,7 +8,8 @@ class Cursos_Form(forms.ModelForm):
 		model = Cursos
 
 		fields=['nombre',
-				'id_docente']
+				'id_docente',
+				'id_unico']
 
 class Materia_Form(forms.ModelForm):
 	class Meta:

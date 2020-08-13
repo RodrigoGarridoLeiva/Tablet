@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               {% csrf_token%} 
 
 
-                <h1> Ingrese Nombre para el curso...</h1>
+                <h1> Ingrese Nombre para el curso... {{random}}</h1>
 
               Nombre</br>
                 <div>
@@ -66,6 +66,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                 <div>
                   <label for=id_docente></label>
                   <input name="id_docente" type="hidden" id="id_docente" value={{id_d}}>
+                </div> 
+
+
+                <div>
+                  <label for=id_unico></label>
+                  <input name="id_unico" type="hidden" id="id_unico" value={{random}}>
                 </div> 
 
              </br>
