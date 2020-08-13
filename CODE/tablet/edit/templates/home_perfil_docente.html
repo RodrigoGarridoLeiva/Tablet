@@ -40,32 +40,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif};
   
   <div class="w3-display-center w3-padding w3-col l6 m8">
     <div class="w3-container w3-gray">
-      <h2><i class="fa fa-bed w3-margin-right"></i>Datos del Perfil</h2>
+      <h2><i class="fa fa-address-card w3-margin-right"></i>Datos del Perfil</h2>
     </div>
     <div class="w3-container w3-white w3-padding-16">
       <form action="/action_page.php" target="_blank">
         <div class="w3-row-padding" style="margin:0 -16px;">
           <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-calendar-o"></i> Nombre</label>
+            <label><i class="fa fa-male"></i> Nombre</label>
             <input class="w3-input w3-border" type="text" value="{{nom}}" readonly>
           </div>
           <div class="w3-half">
-            <label><i class="fa fa-calendar-o"></i> Apellido</label>
+            <label><i class="fa fa-child"></i> Apellido</label>
             <input class="w3-input w3-border" type="text" value="{{ape}}" readonly>
           </div>
         </div>
         <div class="w3-row-padding" style="margin:8px -16px;">
           <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-male"></i> Rut</label>
+            <label><i class="fa fa-asterisk"></i> Rut</label>
             <input class="w3-input w3-border" type="text" value="{{rut}}" readonly>
           </div>
           <div class="w3-half">
-            <label><i class="fa fa-child"></i> OTRO</label>
+            <label><i class="fa fa-at"></i> Correo </label>
           <input class="w3-input w3-border" type="text" value="0" readonly="">
           </div>
         </div>
         <button type="button" class="btn btn-secondary">Editar</button>
-        <button type="button" class="btn btn-dark">Cambiar Contraseña</button>
+        <a href='{% url "docente_contra_edit" %}'><button type="button" class="btn btn-dark">Cambiar Contraseña</button></a>
       </form>
     </div>
   </div>
