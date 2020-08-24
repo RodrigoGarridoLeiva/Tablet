@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cursos',
     'perfiles',
     'edit',
+    'manual',
 ]
 
 MIDDLEWARE = [

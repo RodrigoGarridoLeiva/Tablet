@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+    body{
+
+      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url({% static 'manual.png'%});
+      height: 100vh;
+      -webkit-background-size:cover;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      backdrop-filter: blur(4px);
+    }
+
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+</br>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+    <div class="w3-panel">
+    <a href='{% url "main" %}'><img src="{% static 'check.jpg'%}" style="width:10%"></a>
+    <h1><p>Manual de Usuarios</p></h1>
+  </div>
+
+<!-- Photo Grid -->
+<div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
+  <div class="w3-half">
+    <a href="#"> <img src="{% static 'botonmanualdocente.png'%}" style="width:100%"> </a>
+  </div>
+
+  <div class="w3-half">
+    <a href="#"> <img src="{% static 'botonmanualalumno.png'%}" style="width:100%"> </a>
+  </div>
+</div>
+  
+<!-- End Page Content -->
+</div>
+
+</body>
+</html>
