@@ -38,16 +38,18 @@ h1 {letter-spacing: 6px}
 <!-- Photo Grid -->
 <div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
   <div class="w3-half">
-    <a href="#"> <img src="{% static 'botonmanualdocente.png'%}" style="width:100%"> </a>
+    <a href='{% url "m_d_a" %}'> <img src="{% static 'botonmanualdocente.png'%}" style="width:100%"> </a>
   </div>
 
   <div class="w3-half">
-    <a href="#"> <img src="{% static 'botonmanualalumno.png'%}" style="width:100%"> </a>
+    <a href='{% url "m_a_a" %}'> <img src="{% static 'botonmanualalumno.png'%}" style="width:100%"> </a>
   </div>
 </div>
-  
+
 <!-- End Page Content -->
 </div>
+
+
 
 </body>
 </html>

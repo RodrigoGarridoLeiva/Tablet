@@ -6,3 +6,9 @@ from django.contrib.auth import logout
 def home_manual(request):
 
 	return render(request,"home_manual.html")
+
+def manual_docente_a(request):
+	return render(request,"manual_d_a.html")
+
+def manual_alumno_a(request):
+	return render(request,"manual_a_a.html")
