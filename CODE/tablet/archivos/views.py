@@ -21,7 +21,7 @@ def model_form_upload(request,id_c):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('inicio_cursos'))
+            return HttpResponseRedirect(reverse('lista_cursos_docente'))
     else:
         form = DocumentForm()
     

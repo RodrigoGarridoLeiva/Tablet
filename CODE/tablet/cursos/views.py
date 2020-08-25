@@ -22,7 +22,7 @@ def inicio_cursos(request):
 	if form.is_valid():
 		instance=form.save(commit=False)
 		instance.save()
-		return HttpResponseRedirect(reverse('home_d')) #cambiarlo a lista
+		return HttpResponseRedirect(reverse('lista_cursos_docente'))
 
 
 	context = {

@@ -55,9 +55,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               {% csrf_token%} 
 
 
-                <h1> Ingrese Nombre para el curso... {{random}}</h1>
+                <h1> Ingrese Nombre para el curso.</h1>
 
-              Nombre</br>
                 <div>
                   <label for=nombre></label>
                   <input name="nombre" id="nombre" width="20" placeholder="Inserte Nombre...">
@@ -74,10 +73,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                   <input name="id_unico" type="hidden" id="id_unico" value={{random}}>
                 </div> 
 
-             </br>
+             
+              <button class="btn btn-light" type="submit">Guardar</button>
+              <button class="btn btn-light">Volver</button>
 
-              <button class="btn btn-secondary" type="submit">Enviar</button>
-              </form>
+            </form>
 
 
 

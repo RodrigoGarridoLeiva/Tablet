@@ -102,41 +102,14 @@ a {
 </style>
 
 
-
-<!-- Metodo Buscar -->
-
-
-
-
-<!-- FIN -->
-
-
 <hr>
 
 <div class="container"  style="margin-left: 50px;">
-    <h1  style="margin-left: 10px;">Lista de Cursos   <a href='{% url "inicio_cursos" %}'> <button class="btn btn-secondary "> Agregar Curso </button></a></h1>
+    <h1  style="margin-left: 10px;">Lista de Cursos  </br> <a href='{% url "inicio_cursos" %}'> <button class="btn btn-light "> Agregar Curso </button></a></h1>
+</br></br></br>
 
-    
-
-
-    <div class="row" >
-        <div class="col-md-12 search">
-            <form method="get">
-                <div id="custom-search-input" >
-                    <input id="rut" type="text" style="width: 300px; margin-left:15px;" class="form-control" required oninput="checkRut(this)" minlength="1" maxlength="10" placeholder="Ingrese Codigo..." name="buscar">
-                    <span class="input-group-list">
-                        <button id="lupa" type="submit" style="border:none;"class="button btn btn-secondary"><i class="fas fa-search"></i></button></br> 
-                        <a href='#'id="refresh" style="border: none;"><i class="fas fa-sync"></i></a>    
-                        
-                    </span>
-                    
-                </div>
-            </form>
-        
-    </div>
-</div>
-    <div class="row" style="margin-top:-50px;">
-        <div class="col-lg-12">
+<div class="row" style="margin-top:-50px;">
+        <div class="col-lg">
             <div class="main-box no-header clearfix">
                 <div class="main-box-body clearfix">
                     <div class="table-responsive">
@@ -155,16 +128,16 @@ a {
 
                                 <tr>
                                     <td>
-                                        {{obj.id}}
+                                        {{obj.id_unico}}
                                     </td>
                                     <td>                                      
                                         {{obj.nombre}}
                                     </td>
-                                    <td> <a href='{% url "inicio_materias" curso_id=obj.id %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
+                                    <td> <a href='{% url "inicio_materias" curso_id=obj.id %}'> <button class="btn btn-light "> Materias </button></a>
 
-                                        <a href='#'> <button class="btn btn-secondary "> Detalles (ver alumnos) </button></a>
+                                        <a href='#'> <button class="btn btn-light "> Detalles </button></a>
                                     
-                                        
+                                        <button class="btn btn-danger">Borrar</button>
 
                                      </td> 
                                         

@@ -55,9 +55,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               {% csrf_token%} 
 
 
-                <h1> Ingrese Nombre para la materia...</h1>
+                <h1> Ingrese un nombre para la materia nueva.</h1>
 
-              Nombre</br>
                 <div>
                   <label for=nombre></label>
                   <input name="nombre" id="nombre" width="20" placeholder="Inserte Nombre...">
@@ -68,32 +67,62 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                   <input name="id_curso" type="hidden" id="id_curso" value={{curso_id}}>
                 </div> 
 
-             </br>
-
-              <button class="btn btn-secondary" type="submit">Enviar</button>
+              <button class="btn btn-light" type="submit">Enviar</button>
+              <button class="btn btn-light">Volver</button>
               </form>
-
-
 
 
 </div>
 
-{%for obj in materia%}
+
+
+<div class="container"  style="margin-left: 50px;">
+</br></br></br>
+
+<div class="row" style="margin-top:-50px;">
+        <div class="col-lg">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>    
+                                <th><span>Nombre Materia</span></th>
+                                <th><span>Opciones:</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for obj in materia %}
+                                
+                                {% if curso_id == obj.id_curso %}
+
+                                <tr>
+                                    <td>
+                                        {{obj.nombre}}
+                                    </td>
+                                    <td>
+
+                                      <a href='{% url "form_archivos" id_c=obj.id %}'> <button class="btn btn-light "> Subir Documento </button></a>
+                                      <a href="#"> <button class="btn btn-danger "> Borrar </button></a>
+
+                                     </td> 
+                                        
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                                </tbody>
+                                </table>
+
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                     
 
 
 
 
-
-{%if obj.id_curso == curso_id%}
-
-{{obj.nombre}} 
-<a href='{% url "form_archivos" id_c=obj.id %}'> <button class="btn btn-secondary "> Subir Documento </button></a>
-</br></br>
-
-{%endif%}
-
-
-{%endfor%}
 
 {%  endblock content %}
 

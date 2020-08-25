@@ -19,7 +19,8 @@ def docente_perfil(request):
 
 		"nom": current_user.first_name,
 		"ape":current_user.last_name,
-		"rut":instance.rut
+		"rut":instance.rut,
+		"correo":current_user.email
 	}
 	
 	return render(request,'home_perfil_docente.html',context)
@@ -36,7 +37,8 @@ def alumno_perfil(request):
 
 		"nom": current_user.first_name,
 		"ape":current_user.last_name,
-		"rut":instance.rut
+		"rut":instance.rut,
+		"correo":current_user.email
 	}
 	
 	return render(request,'home_perfil_alumno.html',context)
