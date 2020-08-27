@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from cursos.models import Cursos, Materia, ListaAlumno
 from usuarios.models import Docente
+from archivos.models import Archivo
 from django.contrib.auth.models import User
-
 from cursos.forms import Lista_Form
 
 @login_required
@@ -37,18 +37,26 @@ def home_l(request):
 def ingresar_curso(request):
 	current_user = request.user
 	form = Lista_Form(request.POST or None)
+	c = Cursos.objects.all()
+	l = ListaAlumno.objects.all()
+	usuarios = User.objects.all()
+
+#Hacer if para que no se repitan y no se guarden cursos ya guardados o inexistentes
 
 	if form.is_valid():
 		instance=form.save(commit=False)
 		instance.save()
-		return HttpResponseRedirect(reverse('home_l'))
+		return HttpResponseRedirect(reverse('ingresar_curso'))
 
 	#instance = get_object_or_404(Docente, id_perfil_id = current_user.id)
 
 
 	context = {
 
-		"id_al": current_user.id,
+		"id_al": int(current_user.id),
+		"cursos": c,
+		"user":usuarios,
+		"lista":l,
 	}
 	
 	return render(request,"ingresar_alumno.html",context)
@@ -91,3 +99,33 @@ def cursos_alumno(request, id):
 	}
 	
 	return render(request,"cursos_alumno.html",context)
+
+@login_required
+def archivos(request, id):
+
+	current_user = request.user
+	materia = Materia.objects.all()
+
+	context = {
+
+		"m":materia,
+		"id": int(id),
+		
+	}
+	
+	return render(request,"archivos_curso.html", context)
+
+@login_required
+def archivos_del_curso(request, id):
+
+	current_user = request.user
+	arch = Archivo.objects.all()
+
+	context = {
+
+		"arch":arch,
+		"id": int(id),
+		
+	}
+	
+	return render(request,"archivos_de_curso.html", context)

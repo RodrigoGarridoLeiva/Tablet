@@ -44,37 +44,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
   <div class="card-header text-center">
-    <h1> Cargar Curso </h1>
+    <h1> Materias del Curso </h1>
   </div>
-<div class="card-body">
-    
-
-<!--FORM-->
-
-<form method="POST">
-              {% csrf_token%} 
-
-
-                <h1> Ingrese id del curso.</h1>
-                <div>
-                  <label for=id_curso></label>
-                  <input name="id_curso" id="id_alumno" width="20" placeholder="Inserte identificador...">
-                </div> 
-
-                <div>
-                  <label for=id_alumno></label>
-                  <input name="id_alumno" type="hidden" id="id_alumno" value={{id_al}}>
-                </div> 
-
-             </br>
-
-              <button class="btn btn-success" type="submit">Enviar</button>
-              </form>
-
-
-
-
-</div>
 
 <div class="container"  style="margin-left: 50px;">
 </br></br></br>
@@ -88,53 +59,34 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                             <thead>
                                 <tr>    
                                 <th><span>ID</span></th>
-                                <th><span>Nombre Curso</span></th>
-                                <th><span>Docente</span></th>
+                                <th><span>Materia</span></th>                          
                                 <th><span>Opciones:</span></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 
-                                {% for list in lista%}
+                                {% for obj in m %}
 
-                                {% if id_al == list.id_alumno %}
-
-                                {% for obj in cursos %}
-                              
-
-                                {% if obj.id_unico == list.id_curso %}
-
+                                {% if id == obj.id_curso %}
+                                                                      
                                 <tr>
                                     <td>
-                                        {{obj.id_unico}}
+                                        {{obj.id}}
                                     </td>
                                     <td>
                                         {{obj.nombre}}
                                     </td>
-                                    <td>
-                                      
-
-                                        {% for usr in user %}
-
-                                          {% if usr.id == obj.id_docente %}
-
-                                            {{usr.first_name}} {{usr.last_name}}
-
-                                          {%endif%}
-
-                                        {% endfor %} 
-                                    </td>
 
                                     <td>
 
-                                      <a href='{% url "archivos_curso" id=obj.id %}'> <button class="btn btn-light "> Entrar </button></a>
-                                      <a href="#"> <button class="btn btn-danger "> Eliminar </button></a>
+                                      <a href="#"> <button class="btn btn-light "> Ver Archivos </button></a>
+                                      <a href="#"> <button class="btn btn-success "> Revisar Calificaciones </button></a>
 
                                      </td> 
                                         
                                 </tr>
-                                {%endif%}
-                                {%endfor%}
+                            
+                               
 
                                 
                                 {%endif%}
@@ -148,7 +100,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                                 </div>
                                 </div>
   
-
+<a href='{% url "ingresar_curso" %}'> <button class="btn btn-success "> Volver </button>
 
 
 
