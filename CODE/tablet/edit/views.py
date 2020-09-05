@@ -95,3 +95,6 @@ def alumno_contraseña_edit(request):
 		form = PasswordChangeForm(request.user)
 		return render(request,'al_contra_edit.html',{'form': form})
 
+def paint(request):
+
+	return render(request,'home_edit.html')

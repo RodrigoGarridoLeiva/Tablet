@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 	<meta content="telephone=no" name="format-detection">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -11,8 +12,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	
 
-	<title> [Nombre aplicación]</title>
-	
+	<title> EduCapy </title>
+	<link rel="shortcut icon" href="{% static 'icono.ico'%}">
+
+
 </head>
 <body>
 	<style type="text/css">
@@ -176,10 +179,8 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 	 	</div>
 		 	<div class="titulo">
-		 		<h1 align="center"> <img src="{% static 'logo_p.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;" > </h1></br>
-				<h1 align="center">Bienvenidos</h1></br>
-				<h1 align="center">a</h1></br>
-				<h1 align="center">[NombreAPP]</h1></br>
+		 		<h1 align="center"> <img src="{% static 'logo_nuevo.png'%}" width="300" style="margin-right:20px;padding:5px;" > </h1>
+				<h1 align="center"></h1>
 				<a href="{%url 'login'%}" class="btn mt-5 btn-custom btn-block text_uppercase rounded-pill "> Login </a></br>
 				<a href="{%url 'home_manual'%}" class="btn btn-custom btn-block text_uppercase rounded-pill "> Manual de Usuario </a></br>
 				

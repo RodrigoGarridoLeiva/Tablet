@@ -1,0 +1,120 @@
+{%extends "base_alumno.html"%}
+
+{%  block content %}
+
+<!DOCTYPE html>
+<html>
+<title> {%block head_title %} Portal de  Docentes | Cursos {%endblock head_title%} </title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+        .logo img{
+            width:90px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #DF3E3A;
+  color: white;
+  padding: 14px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+</style>
+
+
+
+
+  <div class="card-header text-center">
+    <h1> Materias del Curso </h1>
+  </div>
+
+
+
+<div class="container"  style="margin-left: 50px;">
+</br></br></br>
+
+<div class="row" style="margin-top:-50px;">
+        <div class="col-lg">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>                              
+                                <th><span>Nombre Archivo</span></th>                          
+                                <th><span>Uploaded</span></th>                          
+                                <th><span>Opciones:</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                {% for obj in arch %}
+
+                                {% if id == obj.curso_id %}
+                                                                      
+                                <tr>
+                                    <td>
+                                        {{obj.nombre}}
+                                    </td>
+                                    <td>
+                                        {{obj.uploaded_at}}
+                                    </td>
+
+                                    <td>
+
+                                      <a href="#"> <button class="btn btn-light "> Realizar Actividad</button></a>
+                                    
+
+                                     </td> 
+                                        
+                                </tr>
+                            
+                               
+
+                                
+                                {%endif%}
+                                {%endfor%}
+                                </tbody>
+                                </table>
+
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+  
+<a href='{% url "ingresar_curso" %}'> <button class="btn btn-success "> Volver </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%  endblock content %}
+

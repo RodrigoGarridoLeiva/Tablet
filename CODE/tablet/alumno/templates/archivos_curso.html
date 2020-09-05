@@ -44,7 +44,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
   <div class="card-header text-center">
-    <h1> Materias del Curso </h1>
+    <h1> Archivos del Curso </h1>
   </div>
 
 <div class="container"  style="margin-left: 50px;">
@@ -79,7 +79,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
                                     <td>
 
-                                      <a href="#"> <button class="btn btn-light "> Ver Archivos </button></a>
+                                      <a href='{% url "archivos_del_curso" id=obj.id %}'> <button class="btn btn-light "> Ver Archivos </button></a>
                                       <a href="#"> <button class="btn btn-success "> Revisar Calificaciones </button></a>
 
                                      </td> 

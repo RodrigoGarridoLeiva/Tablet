@@ -3,6 +3,8 @@
 
 <html>
 <head>
+<title> EduCapy | Portal Alumnos </title>
+<link rel="shortcut icon" href="{% static 'icono.ico'%}">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta content="telephone=no" name="format-detection">
 <style>
@@ -71,7 +73,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
     body{
 
-      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url({% static 'fondoal.jpg'%});
+      background: url({% static 'docback1.1.jpg'%});
       height: 1vh;
       -webkit-background-size:cover;
       background-size: cover;
@@ -84,7 +86,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
     .navbar{
 
 
-      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url({% static 'nav5.jpg'%});
+      background: url({% static 'nav5.2.jpg'%});
     }
 
 
@@ -100,7 +102,8 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 
   <nav class="navbar navbar-expand navbar-light bg-success">
-    <a class="navbar-brand" href='{% url "home_l" %}' style="color: white;margin-right:20px;"><img src="{% static 'logo_p.png'%}" width="60" style="margin-right:20px; background: white; border-radius:50%;padding:5px;" >   Portal de Alumnos </a>
+    <a class="navbar-brand" href='{% url "home_l" %}' style="color: white;margin-right:20px;"><img src="{% static 'logo_nuevo.png'%}" width="150" style="margin-right:20px; padding:5px;" >   Portal de Alumnos </a>
+
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
