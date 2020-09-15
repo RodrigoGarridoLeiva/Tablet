@@ -56,6 +56,12 @@ label > span{
     		<label> N<span>ombre</span> A<span>rchivo:</span></label><br>
     		{{ form.nombre }}
     	</div>
+
+        <div style="padding: 10px">
+            <label> D<span>escripción</span>:</label><br>
+            {{ form.des }}
+        </div>
+
     	<div style="padding:10px;">
     		<label>A<span>rchivo:</span></label>
     		{{form.file}} <br>	
@@ -68,8 +74,8 @@ label > span{
 
     	
     	<div>
-    		 <button type="submit" class="btn btn-info">Subir Archivo</button>
-    		<a href='#'class="btn btn-info"> volver </a>
+    		 <button type="submit" class="btn btn-dark">Subir Archivo</button>
+    		<a href='#'class="btn btn-dark"> volver </a>
     	</div>
    		  
   </form>
