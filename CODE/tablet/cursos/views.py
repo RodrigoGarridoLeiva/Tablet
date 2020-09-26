@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import Cursos_Form, Materia_Form
-from .models import Materia, Cursos
+from .models import Materia, Cursos, ListaAlumno
+from usuarios.models import Alumno
 from archivos.models import Archivo
+from django.contrib.auth.models import User
 import random
 
 @login_required
@@ -72,3 +74,47 @@ def ver_docs(request,id):
 	}
 	
 	return render(request,"ver_docs.html",context)
+
+
+@login_required
+def borrar_curso(request,id):
+
+	curso = get_object_or_404(Cursos, id=id)
+	
+	if request.method == "POST":
+		
+		curso.delete()
+		return redirect(lista_cursos_docente)
+
+	context = {	
+	
+	 "curso":curso
+	}
+	return render(request,"delete_curso.html",context)
+
+@login_required
+def detalles_curso(request,id):
+
+	curso = get_object_or_404(Cursos, id=id)
+	lista = ListaAlumno.objects.all()
+	arch = Archivo.objects.all()
+	alumnos = User.objects.all()
+	rut = Alumno.objects.all()
+
+	
+	if request.method == "POST":
+		
+		curso.delete()
+		return redirect(lista_cursos_docente)
+
+	context = {	
+	
+	 "curso": curso,
+	 "arch": arch,
+	 "lista":lista,
+	 "code":int(curso.id_unico),
+	 "alumnos":alumnos,
+	 "id":int(id),
+	 "rut": Alumno.objects.all()
+	}
+	return render(request,"detalle_curso.html",context)

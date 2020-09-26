@@ -1,0 +1,149 @@
+{%extends "base_docente.html"%}
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+
+
+
+
+
+<header class="w3-container w3-grey">
+  <h2>Detalles del Curso</h2>
+</header>
+
+<div class="w3-padding w3-white w3-display-container">
+  <a href='{% url "lista_cursos_docente" %}'> <button class="btn btn-dark "> Volver </button></a>
+</div>
+
+
+
+<div class="w3-center">
+  <h2>Archivos del curso</h2></br>
+</div>
+</div>
+
+<div class="w3-row-padding">
+
+
+
+
+<div class="w3">
+<div class="w3-card white">
+  <div class="w3-container w3-theme">
+    <h3>Gestionar Archivos</h3>
+  </div>
+  <ul class="w3-ul w3-border-top">
+
+
+{% for obj in arch %}
+
+
+  {%if id == obj.curso_id %}
+    
+      <h4>&nbsp; {{obj.nombre}} <i class="fa fa-file-excel-o w3-margin-bottom w3-text-theme" style="font-size:20px"></i> </h4> 
+      <h5>&nbsp; {{obj.des}}</h5>
+    
+      <a href='#'> <button class="btn btn-danger "> Borrar </button></a>
+      <a href='#'> <button class="btn btn-dark "> Editar </button></a>
+    
+    
+
+
+  {% endif %}
+
+{% endfor %}
+
+  </ul>
+</br>
+  <div class="w3-container w3-theme w3-large"><span class="w3-right">Documentos</span></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="w3-container">
+  <hr>
+  <div class="w3-center">
+    <h2>Lista de alumnos</h2>
+  </div>
+<div class="w3-responsive w3-card-4">
+<table class="w3-table w3-striped w3-bordered">
+<thead>
+<tr class="w3-theme">
+  <th>Primer Nombre</th>
+  <th>Apellido</th>
+  <th>Rut</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+{% for obj in lista %}
+
+
+{% if obj.id_curso == code %}
+
+
+
+{%for usr in alumnos%}
+
+
+
+{%if usr.id == obj.id_alumno %}
+
+<tr>
+  <td>{{usr.first_name}}</td>
+  <td>{{usr.last_name}}</td>
+
+
+{% for r in rut %}
+
+ {%if r.id_perfil_id == obj.id_alumno%}
+  <td>{{r.rut}}</td>
+ {%endif%}
+
+{% endfor %}
+
+</tr>
+
+{%endif%}
+{%endfor%}
+
+{%endif%}
+
+{%endfor%}
+
+
+
+
+
+
+</tbody>
+</table>
+</div>
+
+</br></br></br></br></br></br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{%extends "base_docente.html"%}
+{% load static %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html>
+<title>Eliminar Curso</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third-center">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3><u>Eliminar {{curso.nombre}}</u></h3><br>
+  <i class="fa fa-book w3-margin-bottom w3-text-theme" style="font-size:120px"></i> 
+  <form  method="POST">
+  {% csrf_token%}
+  <h3>Cuidado!! Si eliminas el curso se perderan todos los archivos y listas.</h1><br>
+  <h3>¿Desea eliminarlo?</h1><br>
+  
+
+  <input class="btn btn-danger" type="submit" value="Eliminar">
+  <a href='{% url "lista_cursos_docente" %}'  class="btn btn-dark" role="button">Volver</a></p>
+      </div>
+      </div>
+    </div>
+  </form>  
+
+
+
+
+
+
+
+
+
+{% endblock %}

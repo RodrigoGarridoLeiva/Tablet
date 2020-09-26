@@ -135,9 +135,9 @@ a {
                                     </td>
                                     <td> <a href='{% url "form_archivos" id_c=obj.id %}'> <button class="btn btn-light "> Subir Material </button></a>
 
-                                        <a href='#'> <button class="btn btn-light "> Detalles </button></a>
+                                        <a href='{% url "detalle_curso" id=obj.id %}'> <button class="btn btn-light "> Detalles </button></a>
                                     
-                                        <button class="btn btn-danger">Borrar</button>
+                                        <a href='{% url "borrar_curso" id=obj.id %}'> <button class="btn btn-danger "> Borrar </button></a>
 
                                      </td> 
                                         
