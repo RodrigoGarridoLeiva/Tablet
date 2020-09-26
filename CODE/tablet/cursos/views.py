@@ -118,3 +118,19 @@ def detalles_curso(request,id):
 	 "rut": Alumno.objects.all()
 	}
 	return render(request,"detalle_curso.html",context)
+
+@login_required
+def borrar_archivo(request,id):
+
+	arch = get_object_or_404(Archivo, id=id)
+	
+	if request.method == "POST":
+		
+		arch.delete()
+		return redirect(lista_cursos_docente) #Cambiar redirect
+
+	context = {	
+	
+	 "arch":arch
+	}
+	return render(request,"delete_archivo.html",context)

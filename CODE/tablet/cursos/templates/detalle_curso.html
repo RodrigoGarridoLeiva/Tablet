@@ -24,6 +24,7 @@
 
 <div class="w3-padding w3-white w3-display-container">
   <a href='{% url "lista_cursos_docente" %}'> <button class="btn btn-dark "> Volver </button></a>
+  <a href='#'> <button class="btn btn-secondary "> Anuncios </button></a>
 </div>
 
 
@@ -41,7 +42,7 @@
 <div class="w3">
 <div class="w3-card white">
   <div class="w3-container w3-theme">
-    <h3>Gestionar Archivos</h3>
+    <h3>Gestionar Archivos <a href='{% url "form_archivos" id_c=id %}'> <button class="btn btn-light "> Subir Material </button></a> </h3>  <td> 
   </div>
   <ul class="w3-ul w3-border-top">
 
@@ -54,7 +55,7 @@
       <h4>&nbsp; {{obj.nombre}} <i class="fa fa-file-excel-o w3-margin-bottom w3-text-theme" style="font-size:20px"></i> </h4> 
       <h5>&nbsp; {{obj.des}}</h5>
     
-      <a href='#'> <button class="btn btn-danger "> Borrar </button></a>
+      <a href='{% url "borrar_archivo" id=obj.id %}'> <button class="btn btn-danger "> Borrar </button></a>
       <a href='#'> <button class="btn btn-dark "> Editar </button></a>
     
     
@@ -85,6 +86,7 @@
   <th>Primer Nombre</th>
   <th>Apellido</th>
   <th>Rut</th>
+  <th>Opciones</th>
 </tr>
 </thead>
 
@@ -116,6 +118,8 @@
  {%endif%}
 
 {% endfor %}
+
+  <td><a href='#'> <button class="btn btn-danger "> Quitar </button></a></td>
 
 </tr>
 
