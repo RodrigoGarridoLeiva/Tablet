@@ -127,10 +127,36 @@ def borrar_archivo(request,id):
 	if request.method == "POST":
 		
 		arch.delete()
-		return redirect(lista_cursos_docente) #Cambiar redirect
+		return HttpResponseRedirect(reverse('lista_cursos_docente'))
 
 	context = {	
 	
 	 "arch":arch
 	}
 	return render(request,"delete_archivo.html",context)
+
+@login_required
+def quitar_alumno_de_curso(request,id_a,id_c):
+
+	lista = ListaAlumno.objects.all()
+	identificador = 0
+
+	for l in lista:
+		if l.id_curso == float(id_c) and l.id_alumno == float(id_a):
+			identificador = l.id
+
+		
+	if identificador != 0:
+		lu = get_object_or_404(ListaAlumno, id=identificador)
+
+	if request.method == "POST":
+		
+		lu.delete()
+		return HttpResponseRedirect(reverse('lista_cursos_docente'))
+
+	context = {	
+	
+	 "lista":lista,
+	 "id":identificador
+	}
+	return render(request,"quitar_alumno_de_curso.html",context)

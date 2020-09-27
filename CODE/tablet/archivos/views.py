@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import DocumentForm
 
 
+
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 import os
@@ -34,4 +35,17 @@ def model_form_upload(request,id_c):
 
     return render(request,'form_archivos.html',context)
 
-#FALTA SI ES WORD CONVERTIRLO EN PDF
+@login_required
+def archivo_edit(request,id):
+    
+    current_user = request.user
+    archivo=Archivo.objects.get(id=id)
+
+    if request.method=='GET':
+        form1=DocumentForm(instance=archivo)
+    else:
+        form1=DocumentForm(request.POST,instance=archivo)
+        if form1.is_valid():
+            form1.save()
+        return HttpResponseRedirect(reverse('lista_cursos_docente'))
+    return render(request,'form_archivos_edit.html',{'form1':form1,'archivo':archivo})

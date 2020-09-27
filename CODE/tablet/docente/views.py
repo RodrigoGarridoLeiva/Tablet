@@ -72,3 +72,5 @@ def anuncio_home(request):
 	}
 	
 	return render(request,"anuncio_home.html",context)
+
+
