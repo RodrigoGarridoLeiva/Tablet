@@ -1,0 +1,84 @@
+{%extends "base_docente.html"%}
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+
+
+
+
+
+<header class="w3-container w3-grey">
+  <h2>Sección de anuncios</h2>
+</header>
+
+<div class="w3-padding w3-white w3-display-container">
+  <a href='{% url "home_d" %}'> <button class="btn btn-dark "> Volver </button></a>
+</div>
+
+
+
+<div class="w3-center">
+  <h2>Cursos</h2></br>
+</div>
+</div>
+
+<div class="w3-row-padding">
+
+
+
+
+<div class="w3">
+<div class="w3-card white">
+  <div class="w3-container w3-theme">
+    <h3>Ver cursos</h3>  <td> 
+  </div>
+  <ul class="w3-ul w3-border-top">
+
+
+{% for obj in cursos %}
+
+    {% if obj.id_docente == id %}
+
+      <h4>&nbsp; {{obj.nombre}} </h4> 
+    
+      <a href='#'> <button class="btn btn-secondary "> Ver anuncios </button></a>
+      <a href='#'> <button class="btn btn-dark "> Crear anuncio </button></a>
+    
+    {%endif%}
+    
+{% endfor %}
+
+  </ul>
+</br>
+  <div class="w3-container w3-theme w3-large"><span class="w3-right">Anuncios</span></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</br></br></br></br></br></br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+{% endblock %}

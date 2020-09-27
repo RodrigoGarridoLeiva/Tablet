@@ -56,3 +56,19 @@ def lista_cursos_docente(request):
 	}
 	
 	return render(request,"lista_cursos_docente.html",context)
+
+
+@login_required
+def anuncio_home(request):
+	current_user = request.user
+	cursos = Cursos.objects.all()
+	
+
+	context = {
+
+		"id": current_user.id,
+		"cursos": cursos,
+
+	}
+	
+	return render(request,"anuncio_home.html",context)

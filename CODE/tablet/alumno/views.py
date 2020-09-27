@@ -129,3 +129,15 @@ def archivos_del_curso(request, id):
 	}
 	
 	return render(request,"archivos_de_curso.html", context)
+
+@login_required
+def portal_anuncios(request, id):
+
+	current_user = request.user
+
+	context = {
+
+		
+	}
+	
+	return render(request,"portal_anuncios.html", context)

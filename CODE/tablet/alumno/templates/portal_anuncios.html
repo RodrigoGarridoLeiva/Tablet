@@ -44,34 +44,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
   <div class="card-header text-center">
-    <h1> Cargar Curso </h1>
+    <h1> Portal Anuncios </h1>
   </div>
 <div class="card-body">
     
-
-<!--FORM-->
-
-<form method="POST">
-              {% csrf_token%} 
-
-
-                <h1> Ingrese id del curso.</h1>
-                <div>
-                  <label for=id_curso></label>
-                  <input name="id_curso" id="id_alumno" width="20" placeholder="Inserte identificador...">
-                </div> 
-
-                <div>
-                  <label for=id_alumno></label>
-                  <input name="id_alumno" type="hidden" id="id_alumno" value={{id_al}}>
-                </div> 
-
-             </br>
-
-              <button class="btn btn-success" type="submit">Enviar</button>
-              </form>
-
-
 
 
 </div>
@@ -87,59 +63,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                         <table class="table user-list">
                             <thead>
                                 <tr>    
-                                <th><span>ID</span></th>
-                                <th><span>Nombre Curso</span></th>
-                                <th><span>Docente</span></th>
+                                <th><span>Titulo</span></th>
+                                <th><span>Fecha</span></th>                          
                                 <th><span>Opciones:</span></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 
-                                {% for list in lista%}
-
-                                {% if id_al == list.id_alumno %}
-
-                                {% for obj in cursos %}
-                              
-
-                                {% if obj.id_unico == list.id_curso %}
 
                                 <tr>
                                     <td>
-                                        {{obj.id_unico}}
+                                        titulo
                                     </td>
                                     <td>
-                                        {{obj.nombre}}
-                                    </td>
-                                    <td>
-                                      
-
-                                        {% for usr in user %}
-
-                                          {% if usr.id == obj.id_docente %}
-
-                                            {{usr.first_name}} {{usr.last_name}}
-
-                                          {%endif%}
-
-                                        {% endfor %} 
+                                        fecha
                                     </td>
 
                                     <td>
-
-                                      <a href='{% url "archivos_del_curso" id=obj.id %}'> <button class="btn btn-dark "> Ver Archivos </button></a>
-                                      <a href='{% url "portal_anuncios" id=obj.id %}'> <button class="btn btn-secondary "> Anuncios </button></a>
-                                      <a href="#"> <button class="btn btn-danger "> Eliminar </button></a>
-
+                                      <a href="#"> <button class="btn btn-secondary "> Ver </button></a>                                    
                                      </td> 
                                         
                                 </tr>
-                                {%endif%}
-                                {%endfor%}
-
-                                
-                                {%endif%}
-                                {%endfor%}
                                 </tbody>
                                 </table>
 

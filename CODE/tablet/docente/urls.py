@@ -7,6 +7,7 @@ urlpatterns =[
 url(r'home/	',views.home_d,name="home_d"),
 url(r'editar/docente/',views.editarperfil_docente,name="editar_docente"),
 url(r'lista/cursos',views.lista_cursos_docente,name="lista_cursos_docente"),
+url(r'anuncio',views.anuncio_home,name="anuncio_home"),
 url(r'logout/',views.logout_view,name="logout")
 
 ]
