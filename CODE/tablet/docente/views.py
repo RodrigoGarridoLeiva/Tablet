@@ -74,3 +74,16 @@ def anuncio_home(request):
 	return render(request,"anuncio_home.html",context)
 
 
+
+@login_required
+def ver_anuncio_docente(request):
+		
+
+	context = {
+
+
+
+	}
+	
+	return render(request,"ver_anuncio_docente.html",context)
+
