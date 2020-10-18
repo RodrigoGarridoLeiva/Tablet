@@ -84,7 +84,7 @@ def borrar_curso(request,id):
 	if request.method == "POST":
 		
 		curso.delete()
-		return redirect(lista_cursos_docente)
+		return HttpResponseRedirect(reverse('lista_cursos_docente'))
 
 	context = {	
 	

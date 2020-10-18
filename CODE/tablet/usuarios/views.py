@@ -123,32 +123,12 @@ def Alumno_view(request,perfil): #Se queda
 		if form1.is_valid():
 			form1.save()
 
-			
 		return HttpResponseRedirect(reverse('home_l')) #Redirect to login
 	else:
 		form1 = Alumno_Form()
 		
 	return render(request,'alumno_form.html',{'form1':form1, 'perfil':perfil})
 
-
-
-
-def Paciente_view(request,perfil): #Revisar si se puede borrar
-	tutor=Tutor.objects.get(id_perfil=perfil)
-	if request.method=='POST':
-		form=Paciente_Form(request.POST)
-		
-		
-
-		if form.is_valid():
-			form.save()
-
-			
-		return redirect(PerfilView,perfil)
-	else:
-		form = Paciente_Form()
-		
-	return render(request,'paciente_form.html',{'form':form, 'tutor':tutor})
 
 
 
@@ -206,32 +186,4 @@ def contraseña_perfil_edit(request):
 
 
 
-def contacto(request):
-	
-	if request.method=='POST':
 
-		telefono=request.POST.get('tel')
-		email=request.POST.get('correo')
-		exp=request.POST.get('texto_explicativo')
-		llamar=Llamar(tel=telefono,correo=email,texto_explicativo=exp)
-		llamar.save()
-		return redirect(home)
-	return render(request,"contacto_f.html",context=None)
-
-def contacto_edit(request):
-	llamar=Llamar.objects.last()
-	if request.method=='POST':
-
-		telefono=request.POST.get('tel')
-		email=request.POST.get('correo')
-		exp=request.POST.get('texto_explicativo')
-		llamar.tel=telefono
-		llamar.correo=email
-		llamar.texto_explicativo=exp
-		llamar.save()
-		return redirect(home)
-
-	context={
-		"llamar":llamar,
-	}
-	return render(request,"contacto_edit_f.html",context)
