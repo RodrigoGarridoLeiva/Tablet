@@ -7,6 +7,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 
 from usuarios.models import Docente, Alumno
+from usuarios.forms import Edit_Form
 
 @login_required
 def docente_perfil(request):
@@ -49,15 +50,16 @@ def alumno_perfil(request):
 def docente_edit(request):
 	
 	current_user = request.user
-	docente=Docente.objects.get(id_perfil_id=current_user.id)
+	docente=User.objects.get(id=current_user.id)
+
 	if request.method=='GET':
-		form1=Docente_Form(instance=docente)
+		form1=Edit_Form(instance=docente)
 	else:
-		form1=Docente_Form(request.POST,instance=docente)
+		form1=Edit_Form(request.POST,instance=docente)
 		if form1.is_valid():
 			form1.save()
 		return redirect(ver_perfil)
-	return render(request,'tutor_f.html',{'form1':form1,'docente':docente})
+	return render(request,'registro_edit.html',{'form1':form1,'docente':docente})
 
 
 @login_required
@@ -67,8 +69,7 @@ def docente_contraseña_edit(request):
 		if form.is_valid():
 			user = form.save()
 			update_session_auth_hash(request, user)  # Important!
-			messages.success(request, 'Your password was successfully updated!')
-			return redirect(docente_contraseña_edit)
+			return redirect(docente_contraseña_correcta) 
 		else:
 			messages.error(request, 'Porfavor introduzca contraseña correcta')
 			return redirect(docente_contraseña_edit)
@@ -85,8 +86,7 @@ def alumno_contraseña_edit(request):
 		if form.is_valid():
 			user = form.save()
 			update_session_auth_hash(request, user)  # Important!
-			messages.success(request, 'Your password was successfully updated!')
-			return redirect(alumno_contraseña_edit)
+			return redirect(alumno_contraseña_correcta)
 		else:
 			messages.error(request, 'Porfavor introduzca contraseña correcta')
 			return redirect(alumno_contraseña_edit)
@@ -98,3 +98,14 @@ def alumno_contraseña_edit(request):
 def paint(request):
 
 	return render(request,'home_edit.html')
+
+
+def docente_contraseña_correcta(request):
+
+	return render(request,'password_correcta_d.html')
+
+def alumno_contraseña_correcta(request):
+
+	return render(request,'password_correcta_a.html')
+
+
