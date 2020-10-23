@@ -41,6 +41,8 @@ def ingresar_curso(request):
 	l = ListaAlumno.objects.all()
 	usuarios = User.objects.all()
 
+
+
 #Hacer if para que no se repitan y no se guarden cursos ya guardados o inexistentes
 
 	if form.is_valid():
